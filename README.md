@@ -1,6 +1,6 @@
 # Sisik
 
-TODO: Write a gem description
+Simple wrapper for symmetric crypto}
 
 ## Installation
 

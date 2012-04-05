@@ -1,7 +1,6 @@
 require "sisik/version"
 require 'openssl'
 require 'cgi'
-require 'pry'
 require 'base64'
 
 module Sisik
