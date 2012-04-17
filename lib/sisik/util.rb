@@ -1,7 +1,8 @@
+
 module Sisik
   # Encode a string. Base64 encoded and url safe.
   # For passing ciphertext in url param , you must use this to encode the ciphertext generated from encrypt.  
-  def self.encode_for_param(data)
+  def self.encode_for_url(data)
     encoded = Base64.strict_encode64(data)
     escaped = CGI::escape(encoded)
     return escaped
@@ -9,7 +10,7 @@ module Sisik
 
   # Decode an encoded string. 
   # Use this to decode from encode_For_param method
-  def self.decode_from_param(data)
+  def self.decode_from_url(data)
     unescaped = CGI::unescape(data)
     decoded = Base64.strict_decode64(unescaped)
     return decoded

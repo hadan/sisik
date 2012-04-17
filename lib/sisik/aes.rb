@@ -1,3 +1,4 @@
+
 module Sisik
 
   class AES
@@ -8,10 +9,12 @@ module Sisik
     #   password: pass password (String)
     #   iv: pass the initialization vector, min 16 chars (String)
     #   size: default is 256, better leave it this way (Integer)      
-    def initialize(password, iv="mukelojauh123456", size=256)
+    def initialize(password, iv, size=256)
       @password = password
-
-      if iv.length != 16
+      
+      if iv == :random
+        iv = Sisik::random_string()
+      elsif iv.length != 16
         raise 'iv must 16 characters long'
       end
 
@@ -58,7 +61,4 @@ module Sisik
 
   end
   
-  #def to_hex
-  #     line = generate_random.split.each { |b| sprintf(", 0x%02X",b) }.join
-  # end  
 end
